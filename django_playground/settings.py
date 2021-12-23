@@ -27,6 +27,13 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
+EALTH_CHECK_APPS = [
+    'health_check',
+    'health_check.db',
+    'health_check.cache',
+    'health_check.storage',
+    'health_check.contrib.migrations',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -35,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+] + EALTH_CHECK_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
