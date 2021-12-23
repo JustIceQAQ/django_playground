@@ -27,7 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
-EALTH_CHECK_APPS = [
+HEALTH_CHECK_APPS = [
     'health_check',
     'health_check.db',
     'health_check.cache',
@@ -35,14 +35,18 @@ EALTH_CHECK_APPS = [
     'health_check.contrib.migrations',
 ]
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-] + EALTH_CHECK_APPS
+THIRD_PARTY_APPS = [] + HEALTH_CHECK_APPS
+
+DJANGO_APPS = ['django.contrib.admin',
+               'django.contrib.auth',
+               'django.contrib.contenttypes',
+               'django.contrib.sessions',
+               'django.contrib.messages',
+               'django.contrib.staticfiles', ]
+
+SELF_APPS = ["iris.apps.IrisConfig"]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + SELF_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
