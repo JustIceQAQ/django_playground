@@ -26,13 +26,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Application definition
+# https://github.com/KristianOellegaard/django-health-check
 HEALTH_CHECK_APPS = [
     'health_check',
     'health_check.db',
     'health_check.cache',
     'health_check.storage',
     'health_check.contrib.migrations',
+    'health_check.contrib.psutil',
 ]
 
 THIRD_PARTY_APPS = [] + HEALTH_CHECK_APPS
