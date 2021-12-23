@@ -28,14 +28,16 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
+DJANGO_APPS = ['django.contrib.admin',
+               'django.contrib.auth',
+               'django.contrib.contenttypes',
+               'django.contrib.sessions',
+               'django.contrib.messages',
+               'django.contrib.staticfiles', ]
+
+SELF_APPS = ["iris.apps.IrisConfig"]
+
+INSTALLED_APPS = DJANGO_APPS + SELF_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
