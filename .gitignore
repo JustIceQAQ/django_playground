@@ -211,3 +211,13 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+/.idea/.gitignore
+/.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+/.idea/django_playground.iml
+/.idea/sonarlint/issuestore/index.pb
+/.idea/markdown.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
