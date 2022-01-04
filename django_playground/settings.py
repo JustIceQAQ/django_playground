@@ -37,7 +37,9 @@ DJANGO_APPS = ['django.contrib.admin',
 
 SELF_APPS = ["iris.apps.IrisConfig"]
 
-INSTALLED_APPS = DJANGO_APPS + SELF_APPS
+THIRD_PARTY_APPS = ["oauth2_provider"]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + SELF_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
