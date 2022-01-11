@@ -36,7 +36,7 @@ DJANGO_APPS = ['django.contrib.admin',
                'django.contrib.staticfiles', ]
 
 THIRD_PARTY_APPS = [
-
+    "rest_framework"
 ]
 
 SELF_APPS = ["iris.apps.IrisConfig"]
