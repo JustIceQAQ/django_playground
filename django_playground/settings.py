@@ -35,9 +35,13 @@ DJANGO_APPS = ['django.contrib.admin',
                'django.contrib.messages',
                'django.contrib.staticfiles', ]
 
+THIRD_PARTY_APPS = [
+
+]
+
 SELF_APPS = ["iris.apps.IrisConfig"]
 
-INSTALLED_APPS = DJANGO_APPS + SELF_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + SELF_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
