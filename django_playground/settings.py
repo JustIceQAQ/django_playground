@@ -40,6 +40,8 @@ DJANGO_APPS = ['django.contrib.admin',
                'django.contrib.staticfiles', ]
 
 THIRD_PARTY_APPS = [
+    "django.contrib.postgres",
+    "psqlextra",
 
 ]
 
@@ -87,12 +89,13 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     'default': {
-        "ENGINE": "django.db.backends.postgresql",
+        # "ENGINE": "django.db.backends.postgresql",
         "NAME": env("DJANGO_PG_NAME", default=""),
         "USER": env("DJANGO_PG_USER", default=""),
         "PASSWORD": env("DJANGO_PG_PASSWORD", default=""),
         "HOST": env("DJANGO_PG_HOST", default=""),
         "PORT": env.int("DJANGO_PG_PORT", default=""),
+        "ENGINE": "psqlextra.backend"
     }
 }
 
