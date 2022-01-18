@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="{% url 'iris-create'%}">新增資料</a>
+
+<table>
+    <thead>
+    <th>#</th>
+    <th>花萼長度</th>
+    <th>花萼寬度</th>
+    <th>花瓣長度</th>
+    <th>花瓣寬度</th>
+    <th>分類</th>
+    <th colspan="2">功能</th>
+    </thead>
+    <tbody>
+    {% for iris in iris_list %}
+        <tr>
+            <td>{{ iris.id }}</td>
+            <td>{{ iris.sepal_length }}</td>
+            <td>{{ iris.sepal_width }}</td>
+            <td>{{ iris.petal_length }}</td>
+            <td>{{ iris.petal_width }}</td>
+            <td>{{ iris.classification }}</td>
+            <td><a href="{% url 'iris-update' iris.id %}">修改</a></td>
+            <td><a href="{% url 'iris-delete' iris.id %}">刪除</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{{ f }}
+
+</body>
+</html>

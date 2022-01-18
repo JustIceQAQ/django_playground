@@ -24,6 +24,7 @@ class Iris(models.Model):
         VIRGINICA = 'virginica', _('維吉尼亞鳶尾')
 
     classification = models.CharField(
+        verbose_name="分類",
         max_length=15,
         choices=IrisClassification.choices,
         default=IrisClassification.SETOSA,

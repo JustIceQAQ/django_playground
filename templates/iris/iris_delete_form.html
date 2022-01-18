@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>是否確定刪除?</div>
+<ul>
+    <li>{{ object.id }}</li>
+    <li>{{ object.sepal_length }}</li>
+    <li>{{ object.sepal_width }}</li>
+    <li>{{ object.petal_length }}</li>
+    <li>{{ object.petal_width }}</li>
+    <li>{{ object.classification }}</li>
+</ul>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
