@@ -9,12 +9,7 @@ from rest_framework.routers import DefaultRouter
 from common.models import APIsObject
 from iris.views import IrisViewSet
 
-def is_database_synchronized(database):
-    connection = connections[database]
-    connection.prepare_database()
-    executor = MigrationExecutor(connection)
-    targets = executor.loader.graph.leaf_nodes()
-    return not executor.migration_plan(targets)
+
 
 class DefaultRouters(DefaultRouter):
     """
