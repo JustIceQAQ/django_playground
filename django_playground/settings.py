@@ -45,7 +45,9 @@ THIRD_PARTY_APPS = [
 
 ]
 
-SELF_APPS = ["iris.apps.IrisConfig"]
+SELF_APPS = ["iris.apps.IrisConfig",
+             "employee.apps.EmployeeConfig"
+             ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + SELF_APPS
 
