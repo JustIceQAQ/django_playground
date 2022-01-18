@@ -1,6 +1,7 @@
 from functools import partial
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+import architect
 
 Decimal4_2 = partial(
     models.DecimalField,
@@ -11,7 +12,7 @@ Decimal4_2 = partial(
 
 
 # Create your models here.
-
+@architect.install('operation')
 class Iris(models.Model):
     sepal_length = Decimal4_2(verbose_name=_("花萼長度"))
     sepal_width = Decimal4_2(verbose_name=_("花萼寬度"))
