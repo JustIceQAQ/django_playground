@@ -84,18 +84,18 @@ WSGI_APPLICATION = 'django_playground.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
     'default': {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("DJANGO_PG_NAME", default=""),
-        "USER": env("DJANGO_PG_USER", default=""),
-        "PASSWORD": env("DJANGO_PG_PASSWORD", default=""),
-        "HOST": env("DJANGO_PG_HOST", default=""),
-        "PORT": env.int("DJANGO_PG_PORT", default=""),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": env("DJANGO_PG_NAME", default=""),
+    #     "USER": env("DJANGO_PG_USER", default=""),
+    #     "PASSWORD": env("DJANGO_PG_PASSWORD", default=""),
+    #     "HOST": env("DJANGO_PG_HOST", default=""),
+    #     "PORT": env.int("DJANGO_PG_PORT", default=""),
+    # }
 }
 
 # Password validation
