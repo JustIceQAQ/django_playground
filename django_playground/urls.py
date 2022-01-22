@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from rest_framework.authtoken.views import obtain_auth_token
 
 from iris.views import IrisListView, IrisCreateView, IrisUpdateView, IrisDeleteView
 
@@ -34,6 +35,7 @@ urlpatterns += [
 ]
 
 urlpatterns += [
-    path('api/', include('iris.urls', namespace='iris'))
+    path('api/', include('iris.urls', namespace='iris')),
+    path(r'api/token-auth/', obtain_auth_token)
 
 ]
