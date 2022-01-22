@@ -15,13 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 
 from iris.views import IrisListView, IrisCreateView, IrisUpdateView, IrisDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+]
+
+urlpatterns += [
     path('iris/', IrisListView.as_view(template_name="index.html")),
     path('iris/create/', IrisCreateView.as_view(template_name="iris/iris_create_form.html"), name='iris-create'),
-    path('iris/update/<int:pk>/', IrisUpdateView.as_view(template_name="iris/iris_update_form.html"), name='iris-update'),
-    path('iris/delete/<int:pk>/', IrisDeleteView.as_view(template_name="iris/iris_delete_form.html"), name='iris-delete'),
+    path('iris/update/<int:pk>/', IrisUpdateView.as_view(template_name="iris/iris_update_form.html"),
+         name='iris-update'),
+    path('iris/delete/<int:pk>/', IrisDeleteView.as_view(template_name="iris/iris_delete_form.html"),
+         name='iris-delete'),
+]
+
+urlpatterns += [
+    path('api/', include('iris.urls', namespace='iris'))
+
 ]
