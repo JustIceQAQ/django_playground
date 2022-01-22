@@ -41,7 +41,8 @@ DJANGO_APPS = ['django.contrib.admin',
 
 THIRD_PARTY_APPS = [
     "rest_framework",
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'knox',
 ]
 
 SELF_APPS = ["iris.apps.IrisConfig",
@@ -148,6 +149,7 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
         'rest_framework.authentication.TokenAuthentication',
+        "knox.auth.TokenAuthentication",
 
     ]
 }
