@@ -39,3 +39,7 @@ urlpatterns += [
     path(r'api/token-auth/', obtain_auth_token)
 
 ]
+
+urlpatterns += [
+    path(r'api/api-token/', include('knox.urls'))
+]

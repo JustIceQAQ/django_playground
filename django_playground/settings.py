@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 import environ
+from rest_framework.settings import api_settings
 
 env = environ.Env()
 env.read_env(".env")
@@ -148,8 +149,18 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        'rest_framework.authentication.TokenAuthentication',
         "knox.auth.TokenAuthentication",
-
+        'rest_framework.authentication.TokenAuthentication',
     ]
+}
+
+REST_KNOX = {
+    'SECURE_HASH_ALGORITHM': 'cryptography.hazmat.primitives.hashes.SHA512',
+    'AUTH_TOKEN_CHARACTER_LENGTH': 64,
+    'TOKEN_TTL': timedelta(hours=10),
+    'USER_SERIALIZER': 'knox.serializers.UserSerializer',
+    'TOKEN_LIMIT_PER_USER': None,
+    'AUTO_REFRESH': False,
+    'EXPIRY_DATETIME_FORMAT': api_settings.DATETIME_FORMAT,
+    'AUTH_HEADER_PREFIX': "QAQ"
 }
