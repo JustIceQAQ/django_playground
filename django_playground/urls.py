@@ -18,21 +18,13 @@ from django.urls import path
 from django.urls.conf import include
 from rest_framework.authtoken.views import obtain_auth_token
 
-from iris.views import IrisListView, IrisCreateView, IrisUpdateView, IrisDeleteView
+from iris.urls import iris_urlpatterns_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
 ]
 
-urlpatterns += [
-    path('iris/', IrisListView.as_view(template_name="index.html")),
-    path('iris/create/', IrisCreateView.as_view(template_name="iris/iris_create_form.html"), name='iris-create'),
-    path('iris/update/<int:pk>/', IrisUpdateView.as_view(template_name="iris/iris_update_form.html"),
-         name='iris-update'),
-    path('iris/delete/<int:pk>/', IrisDeleteView.as_view(template_name="iris/iris_delete_form.html"),
-         name='iris-delete'),
-]
+urlpatterns += iris_urlpatterns_view
 
 urlpatterns += [
     path('api/', include('iris.urls', namespace='iris')),
