@@ -10,8 +10,6 @@ Decimal4_2 = partial(
 )
 
 
-# Create your models here.
-
 class Iris(models.Model):
     sepal_length = Decimal4_2(verbose_name=_("花萼長度"))
     sepal_width = Decimal4_2(verbose_name=_("花萼寬度"))

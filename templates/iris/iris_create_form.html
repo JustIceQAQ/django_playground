@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form action="{% url 'iris-create' %}" method="post">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit">
-</form>
-</body>
-</html>
+{% include "_base.html" %}
+
+{% block title %}Iris Create Page{% endblock %}
+
+{% block body %}
+    <div>
+        <form action="{% url 'iris-create' %}" method="post">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}
