@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def swagger_index(request):
+    return render(request, 'swagger_index.html')

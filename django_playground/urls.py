@@ -18,6 +18,7 @@ from django.urls import path
 from django.urls.conf import include
 from rest_framework.authtoken.views import obtain_auth_token
 
+from common.urls import common_urlpatterns
 from iris.urls import iris_urlpatterns_view
 
 urlpatterns = [
@@ -25,9 +26,9 @@ urlpatterns = [
 ]
 
 urlpatterns += iris_urlpatterns_view
+urlpatterns += common_urlpatterns
 
 urlpatterns += [
     path('api/', include('iris.urls', namespace='iris')),
     path(r'api/token-auth/', obtain_auth_token)
-
 ]
