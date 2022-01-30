@@ -8,3 +8,6 @@ django-environ==0.8.1
 djangorestframework==3.12.4
 markdown==3.3.4
 django-filter==2.4.0
+
+# Markdown
+markdown
