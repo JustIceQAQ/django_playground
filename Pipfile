@@ -10,6 +10,7 @@ django-filter = "==2.4.0"
 graph-wrap = "*"
 Django = "==3.2.10"
 Markdown = "==3.3.4"
+psycopg2 = "*"
 
 [dev-packages]
 

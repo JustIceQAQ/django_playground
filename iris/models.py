@@ -9,12 +9,12 @@ Decimal4_2 = partial(
     decimal_places=2
 )
 
-
 class Iris(models.Model):
     sepal_length = Decimal4_2(verbose_name=_("花萼長度"))
     sepal_width = Decimal4_2(verbose_name=_("花萼寬度"))
     petal_length = Decimal4_2(verbose_name=_("花瓣長度"))
     petal_width = Decimal4_2(verbose_name=_("花瓣寬度"))
+    slices = models.PositiveIntegerField(verbose_name=_("花瓣片數"), default=0)
 
     class IrisClassification(models.TextChoices):
         SETOSA = 'setosa', _('山鳶尾')
