@@ -30,5 +30,6 @@ urlpatterns += common_urlpatterns
 
 urlpatterns += [
     path('api/', include('iris.urls', namespace='iris')),
-    path(r'api/token-auth/', obtain_auth_token)
+    path(r'api/token-auth/', obtain_auth_token),
+    path('explorer/', include('explorer.urls')),
 ]

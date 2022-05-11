@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
@@ -32,3 +33,9 @@ class IrisUpdateView(UpdateView):
 class IrisDeleteView(DeleteView):
     model = Iris
     success_url = '/iris'
+
+
+def iris_func(request):
+    dataset = Iris.objects.filter(classification="setosa")
+
+    return HttpResponse("QAQ")

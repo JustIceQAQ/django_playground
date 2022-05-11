@@ -2,7 +2,7 @@ from django.urls import path
 from rest_framework import routers
 
 from iris.api.views import IrisViewSet
-from iris.views import IrisListView, IrisCreateView, IrisUpdateView, IrisDeleteView
+from iris.views import IrisListView, IrisCreateView, IrisUpdateView, IrisDeleteView, iris_func
 
 router = routers.DefaultRouter()
 app_name = "iris"
@@ -16,4 +16,5 @@ iris_urlpatterns_view = [
          name='iris-update'),
     path('iris/delete/<int:pk>/', IrisDeleteView.as_view(template_name="iris/iris_delete_form.html"),
          name='iris-delete'),
+    path("iris/func/", iris_func),
 ]

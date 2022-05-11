@@ -41,7 +41,8 @@ DJANGO_APPS = ['django.contrib.admin',
 
 THIRD_PARTY_APPS = [
     "rest_framework",
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'explorer',
 ]
 
 SELF_APPS = ["iris.apps.IrisConfig",
@@ -152,3 +153,6 @@ REST_FRAMEWORK = {
 
     ]
 }
+
+EXPLORER_CONNECTIONS = { 'Default': 'default' }
+EXPLORER_DEFAULT_CONNECTION = 'default'
